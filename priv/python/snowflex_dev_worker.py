@@ -14,6 +14,7 @@ sys.stdout = sys.stderr
 
 # Now safe to import libraries that might print to stdout
 import snowflake.connector
+snowflake.connector.paramstyle = 'qmark'
 
 # Configure snowflake connector logging to stderr (which stdout now points to)
 logging.getLogger("snowflake.connector").setLevel(logging.WARNING)

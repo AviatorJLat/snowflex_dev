@@ -24,7 +24,9 @@ defmodule SnowflexDev.MixProject do
     [
       {:jason, "~> 1.4"},
       {:db_connection, "~> 2.7"},
-      {:decimal, "~> 2.0"}
+      {:decimal, "~> 2.0"},
+      {:ecto, "~> 3.12"},
+      {:ecto_sql, "~> 3.12"}
     ]
   end
 end
