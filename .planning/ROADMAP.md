@@ -62,7 +62,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- SQL.Connection module with Snowflake SQL generation, ecto/ecto_sql deps, Python qmark paramstyle
+- [x] 03-01-PLAN.md -- SQL.Connection module with Snowflake SQL generation, ecto/ecto_sql deps, Python qmark paramstyle
 - [ ] 03-02-PLAN.md -- Main Ecto adapter module with behaviours, loaders/dumpers, stream, and tests
 
 ### Phase 4: Developer Experience
