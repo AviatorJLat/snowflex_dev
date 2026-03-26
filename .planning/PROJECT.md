@@ -14,21 +14,20 @@ Developers get Snowflake access in local development using their existing SSO cr
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] Python Port bridge — Elixir GenServer manages a long-running Python process via Erlang Port (Validated in Phase 1: Python Bridge & Transport)
+- [x] JSON protocol over stdin/stdout between Elixir and Python (Validated in Phase 1: Python Bridge & Transport)
+- [x] `externalbrowser` SSO authentication via snowflake-connector-python (Validated in Phase 1: Python Bridge & Transport)
+- [x] Snowflake session parameters (warehouse, database, schema, role) configurable via app config (Validated in Phase 1: Python Bridge & Transport)
+- [x] Graceful error handling — Python crashes don't take down the BEAM, Port restarts cleanly (Validated in Phase 1: Python Bridge & Transport)
 
 ### Active
 
 - [ ] Full DBConnection behaviour implementation matching Snowflex's interface
 - [ ] Ecto.Repo integration — schemas, queries, migrations work identically to Snowflex
-- [ ] Python Port bridge — Elixir GenServer manages a long-running Python process via Erlang Port
-- [ ] JSON protocol over stdin/stdout between Elixir and Python
-- [ ] `externalbrowser` SSO authentication via snowflake-connector-python (browser opens on first connection)
 - [ ] Bundled Python virtualenv — `mix snowflex_dev.setup` creates venv and pip installs snowflake-connector-python
 - [ ] Connection pooling compatible with DBConnection pool (multiple Python processes or multiplexed queries)
 - [ ] Same query operations as Snowflex: SELECT, DDL, DML, stored procedures
-- [ ] Snowflake session parameters (warehouse, database, schema, role) configurable via app config
 - [ ] Result set format matches Snowflex's return types so consuming code works unchanged
-- [ ] Graceful error handling — Python crashes don't take down the BEAM, Port restarts cleanly
 - [ ] Config-driven swap between SnowflexDev and Snowflex (only config changes, no code changes)
 
 ### Out of Scope
