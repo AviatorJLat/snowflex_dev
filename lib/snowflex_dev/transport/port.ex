@@ -137,7 +137,8 @@ defmodule SnowflexDev.Transport.Port do
           columns: payload["columns"],
           rows: [],
           total_rows: payload["total_rows"],
-          metadata: payload["metadata"]
+          metadata: payload["metadata"],
+          query_id: payload["query_id"]
         }
 
         {:noreply, %{state | pending_request: {id, from, :chunking, acc}}}
@@ -153,7 +154,8 @@ defmodule SnowflexDev.Transport.Port do
           columns: acc.columns,
           rows: acc.rows,
           num_rows: acc.total_rows,
-          metadata: acc.metadata
+          metadata: acc.metadata,
+          query_id: acc.query_id
         }
 
         GenServer.reply(from, {:ok, result})
@@ -170,7 +172,8 @@ defmodule SnowflexDev.Transport.Port do
           columns: payload["columns"],
           rows: payload["rows"],
           num_rows: payload["num_rows"],
-          metadata: payload["metadata"]
+          metadata: payload["metadata"],
+          query_id: payload["query_id"]
         }
 
         GenServer.reply(from, {:ok, result})
