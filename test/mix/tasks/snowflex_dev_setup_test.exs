@@ -5,7 +5,7 @@ defmodule Mix.Tasks.SnowflexDev.SetupTest do
     test "module is loadable and has @shortdoc" do
       assert Code.ensure_loaded?(Mix.Tasks.SnowflexDev.Setup)
 
-      shortdoc = Mix.Tasks.SnowflexDev.Setup.shortdoc()
+      shortdoc = Mix.Task.shortdoc(Mix.Tasks.SnowflexDev.Setup)
       assert is_binary(shortdoc)
       assert shortdoc =~ "Python"
     end
