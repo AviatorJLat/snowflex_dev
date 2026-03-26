@@ -29,7 +29,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Large result sets transfer without memory exhaustion or protocol corruption (chunked transfer works)
   4. Killing the Python process causes the GenServer to detect the failure and cleanly restart the Port (no BEAM crash, no zombie processes)
   5. Connection parameters (account, warehouse, database, schema, role) are configurable and passed through to the Python worker
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md -- Python worker script, Protocol module, Result/Error structs
+- [ ] 01-02-PLAN.md -- Transport GenServer and integration tests
 
 ### Phase 2: DBConnection Adapter
 **Goal**: SnowflexDev participates in DBConnection's pool and lifecycle, returning results in the exact same format as Snowflex
@@ -70,7 +74,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Python Bridge & Transport | 0/? | Not started | - |
+| 1. Python Bridge & Transport | 0/2 | Planning complete | - |
 | 2. DBConnection Adapter | 0/? | Not started | - |
 | 3. Ecto Integration | 0/? | Not started | - |
 | 4. Developer Experience | 0/? | Not started | - |
