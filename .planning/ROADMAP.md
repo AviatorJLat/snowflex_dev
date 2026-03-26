@@ -12,10 +12,10 @@ SnowflexDev delivers a drop-in development replacement for Snowflex by building 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Python Bridge & Transport** - Erlang Port protocol, Python worker, and Transport GenServer managing the full Port lifecycle
-- [ ] **Phase 2: DBConnection Adapter** - DBConnection behaviour implementation with Query/Result structs, type decoding, and crash recovery
-- [ ] **Phase 3: Ecto Integration** - Ecto adapter behaviours, SQL generation, loaders/dumpers enabling Repo operations
-- [ ] **Phase 4: Developer Experience** - Setup tooling, health checks, error messages, and config-only swap
+- [x] **Phase 1: Python Bridge & Transport** - Erlang Port protocol, Python worker, and Transport GenServer managing the full Port lifecycle
+- [x] **Phase 2: DBConnection Adapter** - DBConnection behaviour implementation with Query/Result structs, type decoding, and crash recovery
+- [x] **Phase 3: Ecto Integration** - Ecto adapter behaviours, SQL generation, loaders/dumpers enabling Repo operations
+- [x] **Phase 4: Developer Experience** - Setup tooling, health checks, error messages, and config-only swap
 
 ## Phase Details
 
@@ -86,7 +86,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Python Bridge & Transport | 0/2 | Planning complete | - |
-| 2. DBConnection Adapter | 0/2 | Planning complete | - |
-| 3. Ecto Integration | 0/2 | Planning complete | - |
-| 4. Developer Experience | 0/2 | Planning complete | - |
+| 1. Python Bridge & Transport | 2/2 | Complete | 2026-03-26 |
+| 2. DBConnection Adapter | 2/2 | Complete | 2026-03-26 |
+| 3. Ecto Integration | 2/2 | Complete | 2026-03-26 |
+| 4. Developer Experience | 2/2 | Complete | 2026-03-26 |
