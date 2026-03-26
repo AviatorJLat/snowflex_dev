@@ -73,7 +73,11 @@ Plans:
   1. Running `mix snowflex_dev.setup` on a clean machine creates a Python virtualenv and installs snowflake-connector-python without manual intervention
   2. On startup, SnowflexDev verifies Snowflake connectivity and prints clear, actionable errors for common failures (Python not found, venv missing, Snowflake unreachable)
   3. A consuming app can switch between SnowflexDev (dev) and Snowflex (prod) by changing only config values -- zero application code changes
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 04-01-PLAN.md -- HealthCheck module and Mix setup task for Python venv bootstrapping
+- [ ] 04-02-PLAN.md -- Wire health check into Connection.connect/1, end-to-end verification
 
 ## Progress
 
@@ -85,4 +89,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Python Bridge & Transport | 0/2 | Planning complete | - |
 | 2. DBConnection Adapter | 0/2 | Planning complete | - |
 | 3. Ecto Integration | 0/2 | Planning complete | - |
-| 4. Developer Experience | 0/? | Not started | - |
+| 4. Developer Experience | 0/2 | Planning complete | - |
