@@ -10,7 +10,9 @@ defmodule SnowflexDev.Connection do
 
   @behaviour DBConnection
 
-  alias SnowflexDev.{Error, Query, Result, Transport, TypeDecoder}
+  require Logger
+
+  alias SnowflexDev.{Error, HealthCheck, Query, Result, Transport, TypeDecoder}
 
   defstruct [:transport_pid, :opts]
 
@@ -23,16 +25,28 @@ defmodule SnowflexDev.Connection do
 
   @impl DBConnection
   def connect(opts) do
-    case Transport.Port.start_link(opts) do
-      {:ok, pid} ->
-        {:ok, %__MODULE__{transport_pid: pid, opts: opts}}
+    with :ok <- maybe_health_check(opts) do
+      Logger.info("SnowflexDev: Starting Python worker, SSO auth may open browser...")
 
-      {:error, reason} ->
-        {:error,
-         %Error{
-           message: "Failed to connect: #{inspect(reason)}",
-           code: "SNOWFLEX_DEV_CONNECT"
-         }}
+      case Transport.Port.start_link(opts) do
+        {:ok, pid} ->
+          {:ok, %__MODULE__{transport_pid: pid, opts: opts}}
+
+        {:error, reason} ->
+          {:error,
+           %Error{
+             message: "Failed to connect: #{inspect(reason)}",
+             code: "SNOWFLEX_DEV_CONNECT"
+           }}
+      end
+    end
+  end
+
+  defp maybe_health_check(opts) do
+    if Keyword.get(opts, :skip_health_check, false) do
+      :ok
+    else
+      HealthCheck.validate(opts)
     end
   end
 

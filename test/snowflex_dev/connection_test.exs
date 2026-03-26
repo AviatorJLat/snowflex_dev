@@ -11,7 +11,8 @@ defmodule SnowflexDev.ConnectionTest do
       worker_path: @echo_worker_path,
       account: "test",
       user: "test",
-      pool_size: 1
+      pool_size: 1,
+      skip_health_check: true
     ]
   end
 
@@ -20,6 +21,13 @@ defmodule SnowflexDev.ConnectionTest do
     # Give pool a moment to establish the connection
     Process.sleep(100)
     %{conn: conn}
+  end
+
+  describe "health check integration" do
+    test "connect fails with health check error when python_path is invalid" do
+      opts = [python_path: "/nonexistent/python3", worker_path: @echo_worker_path]
+      assert {:error, %Error{code: "SNOWFLEX_DEV_PYTHON_NOT_FOUND"}} = Connection.connect(opts)
+    end
   end
 
   describe "pool startup" do
