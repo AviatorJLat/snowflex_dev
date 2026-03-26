@@ -1,6 +1,6 @@
 # SnowflexDev
 
-A drop-in development replacement for [Snowflex](https://github.com/pepsico-ecommerce/snowflex) that gives Elixir developers Snowflake access in local development using browser-based SSO -- no keypairs, no OAuth security integrations, no admin involvement.
+A drop-in development replacement for [Snowflex](https://github.com/pepsico-ecommerce/snowflex) that gives Elixir developers Snowflake access in local development using browser-based SSO -- no keypairs, no security integrations, no admin involvement.
 
 SnowflexDev implements the full `DBConnection` behaviour and Ecto adapter interface, so consuming Phoenix apps can swap between SnowflexDev (dev) and Snowflex (prod) by changing only config values. Zero application code changes.
 
@@ -8,7 +8,7 @@ Under the hood, it bridges Elixir and Python via an Erlang Port, using Python's 
 
 ## Why?
 
-Snowflex's production OAuth flow requires a Snowflake security integration, which needs `ACCOUNTADMIN` access. When admins are unavailable or the setup is blocked, local development stalls.
+Snowflex uses keypair authentication in production, which requires generating keys and configuring a Snowflake security integration (`ACCOUNTADMIN` access). When admins are unavailable or the setup is blocked, local development stalls.
 
 Python's Snowflake connector supports `externalbrowser` SSO natively -- it opens your browser, you authenticate with your existing credentials, and you're connected. No Snowflake-side setup required.
 

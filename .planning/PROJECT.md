@@ -8,7 +8,7 @@ SnowflexDev bridges Elixir and Python via an Erlang Port, managing a bundled Pyt
 
 ## Core Value
 
-Developers get Snowflake access in local development using their existing SSO credentials with zero infrastructure setup -- no keypairs, no OAuth security integrations, no admin involvement. Just `mix snowflex_dev.setup`, configure, and query.
+Developers get Snowflake access in local development using their existing SSO credentials with zero infrastructure setup -- no keypairs, no security integrations, no admin involvement. Just `mix snowflex_dev.setup`, configure, and query.
 
 ## Current State
 
@@ -47,14 +47,14 @@ All 22 v1.0 requirements satisfied. Verified with live SSO testing against real 
 
 - Production use -- this is explicitly a dev/test tool (Snowflex handles production via REST API + keypair JWT)
 - ODBC support -- using Python's native connector, not ODBC
-- OAuth token management -- `externalbrowser` handles auth internally within the Python connector
+- Token management -- `externalbrowser` handles auth internally within the Python connector
 - Snowflake security integration setup -- the whole point is avoiding this
 - Transaction support -- Snowflake doesn't support traditional transactions; matches Snowflex's behaviour
 
 ## Context
 
 - **Companion to:** pepsico-ecommerce/snowflex -- production Snowflake Ecto adapter using REST SQL API
-- **Origin:** Snowflex's OAuth flow requires a Snowflake security integration (ACCOUNTADMIN access) which blocks local dev when admins are unavailable. Python's connector supports `externalbrowser` SSO natively with zero Snowflake-side setup.
+- **Origin:** Snowflex's keypair authentication requires a Snowflake security integration (ACCOUNTADMIN access) which blocks local dev when admins are unavailable. Python's connector supports `externalbrowser` SSO natively with zero Snowflake-side setup.
 - **Target user:** Elixir/Phoenix developers who use Snowflake via Snowflex in production but need frictionless local dev access
 - **Reference implementation:** CrewAI project at Pilotbase uses the same Python connector + externalbrowser pattern successfully with account PILOTBASE-WN74625
 
@@ -74,7 +74,7 @@ All 22 v1.0 requirements satisfied. Verified with live SSO testing against real 
 | Erlang Port (not NIFs/erlport) | Simplest, most stable Elixir-Python bridge. Process isolation means Python crashes can't corrupt BEAM memory | ✓ Good -- zero BEAM crashes during testing |
 | Bundled venv (not system Python) | Zero-setup for consuming developers. `mix snowflex_dev.setup` handles everything | ✓ Good -- one command to working setup |
 | JSON protocol over stdin/stdout | Human-readable, debuggable, no binary serialization complexity | ✓ Good -- simplified debugging during development |
-| `externalbrowser` auth (not OAuth tokens) | Works without any Snowflake admin setup | ✓ Good -- core value validated with live SSO |
+| `externalbrowser` auth (not keypair) | Works without any Snowflake admin setup | ✓ Good -- core value validated with live SSO |
 | Full DBConnection behaviour (not proxy) | True drop-in replacement. Consuming app's Ecto code is completely unaware of which adapter is active | ✓ Good -- config-only swap verified |
 | Copy Snowflex SQL generation (not depend on it) | Avoid runtime dependency on Snowflex in dev environments | ✓ Good -- ~900 lines copied, module refs renamed |
 | `qmark` paramstyle in Python worker | Ecto uses `?` placeholders; `qmark` tells snowflake-connector-python to accept them | ✓ Good -- seamless Ecto parameter passing |

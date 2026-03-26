@@ -7,7 +7,7 @@ A drop-in development replacement for Snowflex (Elixir Snowflake Ecto adapter) t
 
 SnowflexDev bridges Elixir and Python via an Erlang Port, managing a bundled Python virtualenv with `snowflake-connector-python` pre-installed. A Mix task handles venv creation automatically.
 
-**Core Value:** Developers get Snowflake access in local development using their existing SSO credentials with zero infrastructure setup — no keypairs, no OAuth security integrations, no admin involvement. Just `mix snowflex_dev.setup`, configure, and query.
+**Core Value:** Developers get Snowflake access in local development using their existing SSO credentials with zero infrastructure setup — no keypairs, no security integrations, no admin involvement. Just `mix snowflex_dev.setup`, configure, and query.
 
 ### Constraints
 
