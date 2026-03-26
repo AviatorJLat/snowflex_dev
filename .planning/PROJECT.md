@@ -19,15 +19,15 @@ Developers get Snowflake access in local development using their existing SSO cr
 - [x] `externalbrowser` SSO authentication via snowflake-connector-python (Validated in Phase 1: Python Bridge & Transport)
 - [x] Snowflake session parameters (warehouse, database, schema, role) configurable via app config (Validated in Phase 1: Python Bridge & Transport)
 - [x] Graceful error handling — Python crashes don't take down the BEAM, Port restarts cleanly (Validated in Phase 1: Python Bridge & Transport)
+- [x] Full DBConnection behaviour implementation matching Snowflex's interface (Validated in Phase 2: DBConnection Adapter)
+- [x] Connection pooling compatible with DBConnection pool (multiple Python processes or multiplexed queries) (Validated in Phase 2: DBConnection Adapter)
+- [x] Result set format matches Snowflex's return types so consuming code works unchanged (Validated in Phase 2: DBConnection Adapter)
 
 ### Active
 
-- [ ] Full DBConnection behaviour implementation matching Snowflex's interface
 - [ ] Ecto.Repo integration — schemas, queries, migrations work identically to Snowflex
 - [ ] Bundled Python virtualenv — `mix snowflex_dev.setup` creates venv and pip installs snowflake-connector-python
-- [ ] Connection pooling compatible with DBConnection pool (multiple Python processes or multiplexed queries)
 - [ ] Same query operations as Snowflex: SELECT, DDL, DML, stored procedures
-- [ ] Result set format matches Snowflex's return types so consuming code works unchanged
 - [ ] Config-driven swap between SnowflexDev and Snowflex (only config changes, no code changes)
 
 ### Out of Scope
@@ -84,4 +84,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-26 after initialization*
+*Last updated: 2026-03-26 after Phase 2 completion*
