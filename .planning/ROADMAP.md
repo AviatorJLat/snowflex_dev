@@ -59,7 +59,11 @@ Plans:
   2. Repo.insert/2, Repo.update/2, and Repo.delete/2 execute the expected SQL against Snowflake
   3. Ecto type conversions (loaders/dumpers) round-trip correctly between Elixir schema types and Snowflake column types
   4. SQL generation produces valid Snowflake dialect (CTEs, QUALIFY, window functions work)
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md -- SQL.Connection module with Snowflake SQL generation, ecto/ecto_sql deps, Python qmark paramstyle
+- [ ] 03-02-PLAN.md -- Main Ecto adapter module with behaviours, loaders/dumpers, stream, and tests
 
 ### Phase 4: Developer Experience
 **Goal**: A new developer can go from zero to running Snowflake queries with one mix task and a config change
@@ -80,5 +84,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Python Bridge & Transport | 0/2 | Planning complete | - |
 | 2. DBConnection Adapter | 0/2 | Planning complete | - |
-| 3. Ecto Integration | 0/? | Not started | - |
+| 3. Ecto Integration | 0/2 | Planning complete | - |
 | 4. Developer Experience | 0/? | Not started | - |
