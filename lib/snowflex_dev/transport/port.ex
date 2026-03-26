@@ -32,7 +32,8 @@ defmodule SnowflexDev.Transport.Port do
 
   @impl SnowflexDev.Transport
   def start_link(opts) do
-    GenServer.start_link(__MODULE__, opts)
+    timeout = Keyword.get(opts, :login_timeout, 300_000)
+    GenServer.start_link(__MODULE__, opts, timeout: timeout)
   end
 
   @impl SnowflexDev.Transport

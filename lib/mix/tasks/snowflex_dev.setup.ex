@@ -23,7 +23,7 @@ defmodule Mix.Tasks.SnowflexDev.Setup do
   use Mix.Task
 
   @venv_dir "_snowflex_dev/venv"
-  @pip_package "snowflake-connector-python>=3.12,<5.0"
+  @pip_package "snowflake-connector-python[secure-local-storage]>=3.12,<5.0"
 
   @impl Mix.Task
   def run(_args) do
@@ -115,11 +115,11 @@ defmodule Mix.Tasks.SnowflexDev.Setup do
   end
 
   defp install_deps! do
-    pip = Path.join([@venv_dir, "bin", "pip"])
+    python = Path.join([@venv_dir, "bin", "python3"]) |> Path.expand()
 
     Mix.shell().info("  Installing #{@pip_package}...")
 
-    case System.cmd(pip, ["install", "--upgrade", @pip_package], stderr_to_stdout: true) do
+    case System.cmd(python, ["-m", "pip", "install", "--upgrade", @pip_package], stderr_to_stdout: true) do
       {_output, 0} ->
         Mix.shell().info("  Dependencies installed successfully")
 
@@ -136,7 +136,7 @@ defmodule Mix.Tasks.SnowflexDev.Setup do
   end
 
   defp verify_install! do
-    python = Path.join([@venv_dir, "bin", "python3"])
+    python = Path.join([@venv_dir, "bin", "python3"]) |> Path.expand()
 
     case System.cmd(python, ["-c", "import snowflake.connector; print(snowflake.connector.__version__)"],
            stderr_to_stdout: true
