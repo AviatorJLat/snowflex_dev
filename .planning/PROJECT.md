@@ -24,11 +24,13 @@ Developers get Snowflake access in local development using their existing SSO cr
 - [x] Result set format matches Snowflex's return types so consuming code works unchanged (Validated in Phase 2: DBConnection Adapter)
 - [x] Ecto.Repo integration — schemas, queries, migrations work identically to Snowflex (Validated in Phase 3: Ecto Integration)
 - [x] Same query operations as Snowflex: SELECT, DDL, DML, stored procedures (Validated in Phase 3: Ecto Integration)
+- [x] Bundled Python virtualenv — `mix snowflex_dev.setup` creates venv and pip installs snowflake-connector-python (Validated in Phase 4: Developer Experience)
+- [x] Config-driven swap between SnowflexDev and Snowflex (only config changes, no code changes) (Validated in Phase 4: Developer Experience)
+- [x] Health check on startup with clear, actionable errors for common failures (Validated in Phase 4: Developer Experience)
 
 ### Active
 
-- [ ] Bundled Python virtualenv — `mix snowflex_dev.setup` creates venv and pip installs snowflake-connector-python
-- [ ] Config-driven swap between SnowflexDev and Snowflex (only config changes, no code changes)
+(No active requirements — all validated through Phase 4)
 
 ### Out of Scope
 
@@ -84,4 +86,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-26 after Phase 3 completion*
+*Last updated: 2026-03-26 after Phase 4 completion (final phase — all v1.0 requirements validated)*
