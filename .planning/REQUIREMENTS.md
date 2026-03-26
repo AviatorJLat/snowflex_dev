@@ -55,25 +55,25 @@
 
 | Requirement | Phase | Plan | Status |
 |-------------|-------|------|--------|
-| PORT-01 | | | |
-| PORT-02 | | | |
-| PORT-03 | | | |
-| PORT-04 | | | |
-| PORT-05 | | | |
-| DBC-01 | | | |
-| DBC-02 | | | |
-| DBC-03 | | | |
-| DBC-04 | | | |
-| DBC-05 | | | |
-| ECTO-01 | | | |
-| ECTO-02 | | | |
-| ECTO-03 | | | |
-| ECTO-04 | | | |
-| TRANS-01 | | | |
-| TRANS-02 | | | |
-| TRANS-03 | | | |
-| TRANS-04 | | | |
-| DX-01 | | | |
-| DX-02 | | | |
-| DX-03 | | | |
-| DX-04 | | | |
+| PORT-01 | Phase 1 | | Pending |
+| PORT-02 | Phase 1 | | Pending |
+| PORT-03 | Phase 1 | | Pending |
+| PORT-04 | Phase 1 | | Pending |
+| PORT-05 | Phase 1 | | Pending |
+| TRANS-01 | Phase 1 | | Pending |
+| TRANS-02 | Phase 1 | | Pending |
+| TRANS-03 | Phase 1 | | Pending |
+| TRANS-04 | Phase 1 | | Pending |
+| DBC-01 | Phase 2 | | Pending |
+| DBC-02 | Phase 2 | | Pending |
+| DBC-03 | Phase 2 | | Pending |
+| DBC-04 | Phase 2 | | Pending |
+| DBC-05 | Phase 2 | | Pending |
+| ECTO-01 | Phase 3 | | Pending |
+| ECTO-02 | Phase 3 | | Pending |
+| ECTO-03 | Phase 3 | | Pending |
+| ECTO-04 | Phase 3 | | Pending |
+| DX-01 | Phase 4 | | Pending |
+| DX-02 | Phase 4 | | Pending |
+| DX-03 | Phase 4 | | Pending |
+| DX-04 | Phase 4 | | Pending |
