@@ -44,7 +44,11 @@ Plans:
   2. Result struct fields (columns, rows, num_rows, metadata, query_id) match Snowflex.Result for the same query
   3. Snowflake types (FIXED, REAL, TIMESTAMP_NTZ, TIMESTAMP_LTZ, TIMESTAMP_TZ, DATE, TIME, BOOLEAN, VARCHAR) decode to identical Elixir types as Snowflex
   4. A Python crash mid-query returns an error to the caller and the pool recovers the connection slot automatically
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md -- Query/Result structs, TypeDecoder, Python worker query_id enhancement
+- [ ] 02-02-PLAN.md -- DBConnection behaviour implementation and integration tests
 
 ### Phase 3: Ecto Integration
 **Goal**: Consuming apps can use Ecto.Repo operations (all, insert, update, delete) with SnowflexDev identically to Snowflex
@@ -75,6 +79,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Python Bridge & Transport | 0/2 | Planning complete | - |
-| 2. DBConnection Adapter | 0/? | Not started | - |
+| 2. DBConnection Adapter | 0/2 | Planning complete | - |
 | 3. Ecto Integration | 0/? | Not started | - |
 | 4. Developer Experience | 0/? | Not started | - |
