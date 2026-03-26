@@ -47,7 +47,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- Query/Result structs, TypeDecoder, Python worker query_id enhancement
+- [x] 02-01-PLAN.md -- Query/Result structs, TypeDecoder, Python worker query_id enhancement
 - [ ] 02-02-PLAN.md -- DBConnection behaviour implementation and integration tests
 
 ### Phase 3: Ecto Integration
