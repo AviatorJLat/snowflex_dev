@@ -76,7 +76,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- HealthCheck module and Mix setup task for Python venv bootstrapping
+- [x] 04-01-PLAN.md -- HealthCheck module and Mix setup task for Python venv bootstrapping
 - [ ] 04-02-PLAN.md -- Wire health check into Connection.connect/1, end-to-end verification
 
 ## Progress
