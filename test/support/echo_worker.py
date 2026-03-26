@@ -131,6 +131,10 @@ def handle_execute(request_id, payload):
             },
         })
 
+    elif sql == "SELECT crash":
+        import os
+        os._exit(1)
+
     elif sql == "SELECT slow":
         # Just respond normally -- used for crash-during-pending tests
         import time
