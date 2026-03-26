@@ -25,4 +25,8 @@ snowflex_dev-*.tar
 # Python bytecode cache
 __pycache__/
 *.pyc
-.claude/worktrees/
+
+# Claude Code / GSD planning artifacts
+.claude/
+.planning/
+CLAUDE.md
