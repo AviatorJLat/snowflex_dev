@@ -206,6 +206,10 @@ SnowflexDev is built in four layers:
 3. **DBConnection Adapter** -- Full `DBConnection` behaviour with type decoding matching Snowflex
 4. **Ecto Adapter** -- `Ecto.Adapter`, `Ecto.Adapter.Queryable`, and `Ecto.Adapter.Schema` behaviours with Snowflake SQL dialect generation
 
+## Built With
+
+This project was developed with the assistance of [Claude Code](https://claude.ai/claude-code) using the [GSD (Get Shit Done)](https://github.com/gsd-build/get-shit-done) workflow.
+
 ## License
 
 See [LICENSE](LICENSE) for details.

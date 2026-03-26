@@ -5,6 +5,7 @@ defmodule SnowflexDev.MixProject do
     [
       app: :snowflex_dev,
       version: "0.1.0",
+      description: "Drop-in dev replacement for Snowflex using Python's snowflake-connector-python with browser SSO. Built with Claude Code + GSD.",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps()
