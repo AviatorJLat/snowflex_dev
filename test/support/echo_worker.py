@@ -59,7 +59,26 @@ def handle_execute(request_id, payload):
                 "columns": ["1"],
                 "rows": [[1]],
                 "num_rows": 1,
-                "metadata": {},
+                "metadata": {"1": {"type_code": 0, "scale": 0, "precision": 1, "null_ok": False}},
+                "query_id": "test-query-id-001",
+            },
+        })
+
+    elif sql == "SELECT typed":
+        write_message({
+            "id": request_id,
+            "status": "ok",
+            "payload": {
+                "columns": ["num", "name", "created", "active"],
+                "rows": [["42", "Alice", "2024-01-15", "true"]],
+                "num_rows": 1,
+                "metadata": {
+                    "num": {"type_code": 0, "scale": 0, "precision": 10, "null_ok": False},
+                    "name": {"type_code": 2, "scale": 0, "precision": 0, "null_ok": True},
+                    "created": {"type_code": 3, "scale": 0, "precision": 0, "null_ok": True},
+                    "active": {"type_code": 13, "scale": 0, "precision": 0, "null_ok": False},
+                },
+                "query_id": "test-query-id-typed",
             },
         })
 
@@ -72,7 +91,8 @@ def handle_execute(request_id, payload):
             "payload": {
                 "columns": ["n"],
                 "total_rows": 3,
-                "metadata": {},
+                "metadata": {"n": {"type_code": 0, "scale": 0, "precision": 10, "null_ok": False}},
+                "query_id": "test-query-id-chunked",
             },
         })
         # Chunk 0
@@ -122,7 +142,8 @@ def handle_execute(request_id, payload):
                 "columns": ["1"],
                 "rows": [[1]],
                 "num_rows": 1,
-                "metadata": {},
+                "metadata": {"1": {"type_code": 0, "scale": 0, "precision": 1, "null_ok": False}},
+                "query_id": "test-query-id-slow",
             },
         })
 
@@ -135,7 +156,8 @@ def handle_execute(request_id, payload):
                 "columns": ["result"],
                 "rows": [[sql]],
                 "num_rows": 1,
-                "metadata": {},
+                "metadata": {"result": {"type_code": 2, "scale": 0, "precision": 0, "null_ok": True}},
+                "query_id": "test-query-id-echo",
             },
         })
 

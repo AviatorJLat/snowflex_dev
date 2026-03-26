@@ -115,6 +115,7 @@ def execute_query(conn, request_id, sql, params):
                     "rows": [],
                     "num_rows": cursor.rowcount,
                     "metadata": {},
+                    "query_id": cursor.sfqid,
                 },
             })
             return
@@ -134,6 +135,7 @@ def execute_query(conn, request_id, sql, params):
                     "rows": serialize_rows(rows),
                     "num_rows": num_rows,
                     "metadata": metadata,
+                    "query_id": cursor.sfqid,
                 },
             })
         else:
@@ -146,6 +148,7 @@ def execute_query(conn, request_id, sql, params):
                     "columns": columns,
                     "total_rows": num_rows,
                     "metadata": metadata,
+                    "query_id": cursor.sfqid,
                 },
             })
 
