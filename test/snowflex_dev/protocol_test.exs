@@ -161,12 +161,17 @@ defmodule SnowflexDev.ProtocolTest do
   end
 
   describe "Result struct" do
-    test "has expected fields with nil defaults" do
+    test "has expected fields with correct defaults" do
       result = %Result{}
       assert result.columns == nil
       assert result.rows == nil
-      assert result.num_rows == nil
-      assert result.metadata == nil
+      assert result.num_rows == 0
+      assert result.metadata == []
+      assert result.messages == []
+      assert result.query == nil
+      assert result.query_id == nil
+      assert result.request_id == nil
+      assert result.sql_state == nil
     end
 
     test "can be constructed with values" do
